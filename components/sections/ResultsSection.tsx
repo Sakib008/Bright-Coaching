@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 import SectionHeader from '@/components/layout/SectionHeader';
@@ -14,10 +14,14 @@ const TOPPERS = [
   { name:'Ananya Singh',  exam:'CUET UG',      rank:'Top 0.5%',  score:'780 / 800', year:'2025', image:'https://images.pexels.com/photos/5211457/pexels-photo-5211457.jpeg' },
   { name:'Dev Patel',     exam:'NEET UG',      rank:'AIR 204',   score:'695 / 720', year:'2025', image:'https://images.pexels.com/photos/3985198/pexels-photo-3985198.jpeg ' },
 ];
-
+const slideVariants: Variants = {
+  enter: (d: number) => ({ opacity: 0, x: d * 70 }),
+  center: { opacity: 1, x: 0 },
+  exit:  (d: number) => ({ opacity: 0, x: d * -70 }),
+};
 export default function ResultsSection() {
-  const [idx, setIdx] = useState(0);
-  const [dir, setDir] = useState(1);
+  const [idx, setIdx] = useState<number>(0);
+  const [dir, setDir] = useState<1|-1>(1);
   const timer = useRef<ReturnType<typeof setInterval>|null>(null);
 
   const go = (d: 1|-1) => { setDir(d); setIdx(i => (i+d+TOPPERS.length)%TOPPERS.length); };
@@ -43,8 +47,8 @@ export default function ResultsSection() {
         </div>
 
         <AnimatePresence mode="wait" custom={dir}>
-          <motion.div key={idx} custom={dir}
-            initial={d=>({opacity:0,x:d*70})} animate={{opacity:1,x:0}} exit={d=>({opacity:0,x:d*-70})}
+          <motion.div key={idx} custom={dir} variants={slideVariants}
+            initial="enter" animate="center" exit="exit"
             transition={{duration:0.48,ease:[0.16,1,0.3,1]}}
             className="grid gap-5 md:grid-cols-[1.15fr_0.85fr]"
           >
