@@ -62,8 +62,14 @@ export default function FeaturedPost({ post }: { post: BlogPost }) {
 
           <div className="mt-8 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full text-xs font-bold text-white"
-                style={{ background: post.accentColor }}>{post.initials}</div>
+              <Image
+                src={post.img}
+                alt={post.author}
+                width={24}
+                height={24}
+                className="h-6 w-6 shrink-0 rounded-full object-cover"
+                loading="lazy"
+              />
               <div>
                 <p className="text-sm font-bold text-[#1E293B]">{post.author}</p>
                 <p className="text-xs text-[#94A3B8]">{post.date}</p>

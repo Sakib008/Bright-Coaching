@@ -21,7 +21,7 @@ export type TeamMember = {
   subjects:  string[];
   exp:       string;
   quote:     string;
-  initials:  string;
+  image:  string;
   color:     string;
 };
 
@@ -44,12 +44,12 @@ export const VALUES: Value[] = [
 ];
 
 export const TEAM_MEMBERS: TeamMember[] = [
-  { id: 'mehta',   name: 'Dr. R. Mehta',    role: 'Physics', subjects: ['JEE Physics', 'Class 11–12'],   exp: '18 years', quote: 'Physics is not memorisation. It\'s the ability to see a system clearly.',           initials: 'RM', color: 'bg-[#0B3C5D]'  },
-  { id: 'sharma',  name: 'Prof. A. Sharma', role: 'Chemistry',subjects: ['JEE Chem', 'NEET Chem'],      exp: '14 years', quote: 'Reactions make sense only when a student stops fearing the formula sheet.',          initials: 'AS', color: 'bg-[#27AE60]'  },
-  { id: 'kapoor',  name: 'Ms. S. Kapoor',   role: 'Biology', subjects: ['NEET Biology', 'Class 11–12'], exp: '11 years', quote: 'NCERT is the scripture. Everything else is commentary.',                            initials: 'SK', color: 'bg-[#7C3AED]'  },
-  { id: 'verma',   name: 'Mr. P. Verma',    role: 'Mathematics',subjects: ['JEE Maths', 'Foundation'], exp: '16 years', quote: 'Maths anxiety disappears the moment a student solves something no one showed them.', initials: 'PV', color: 'bg-[#F39C12]'  },
-  { id: 'singh',   name: 'Ms. N. Singh',    role: 'Commerce', subjects: ['Accounts', 'Economics', 'CUET'], exp: '9 years', quote: 'A student who can read a balance sheet can navigate anything.',                  initials: 'NS', color: 'bg-[#0891B2]'  },
-  { id: 'mishra',  name: 'Dr. V. Mishra',   role: 'Humanities',subjects: ['History', 'Poly Sci', 'CUET'], exp: '12 years', quote: 'The best humanities students think in arguments, not answers.',                 initials: 'VM', color: 'bg-[#DB2777]'  },
+  { id: 'mehta',   name: 'Dr. R. Mehta',    role: 'Physics', subjects: ['JEE Physics', 'Class 11–12'],   exp: '18 years', quote: 'Physics is not memorisation. It\'s the ability to see a system clearly.',           image: 'RM', color: 'bg-[#0B3C5D]'  },
+  { id: 'sharma',  name: 'Prof. A. Sharma', role: 'Chemistry',subjects: ['JEE Chem', 'NEET Chem'],      exp: '14 years', quote: 'Reactions make sense only when a student stops fearing the formula sheet.',          image: 'AS', color: 'bg-[#27AE60]'  },
+  { id: 'kapoor',  name: 'Ms. S. Kapoor',   role: 'Biology', subjects: ['NEET Biology', 'Class 11–12'], exp: '11 years', quote: 'NCERT is the scripture. Everything else is commentary.',                            image: 'SK', color: 'bg-[#7C3AED]'  },
+  { id: 'verma',   name: 'Mr. P. Verma',    role: 'Mathematics',subjects: ['JEE Maths', 'Foundation'], exp: '16 years', quote: 'Maths anxiety disappears the moment a student solves something no one showed them.', image: 'PV', color: 'bg-[#F39C12]'  },
+  { id: 'singh',   name: 'Ms. N. Singh',    role: 'Commerce', subjects: ['Accounts', 'Economics', 'CUET'], exp: '9 years', quote: 'A student who can read a balance sheet can navigate anything.',                  image: 'NS', color: 'bg-[#0891B2]'  },
+  { id: 'mishra',  name: 'Dr. V. Mishra',   role: 'Humanities',subjects: ['History', 'Poly Sci', 'CUET'], exp: '12 years', quote: 'The best humanities students think in arguments, not answers.',                 image: 'VM', color: 'bg-[#DB2777]'  },
 ];
 
 // ── RESULTS ────────────────────────────────────────────────────────────────────
@@ -62,7 +62,7 @@ export type TopperCard = {
   college: string;
   year:    string;
   batch:   string;
-  initials:string;
+  image:string;
   color:   string;
 };
 
@@ -90,14 +90,14 @@ export const RESULT_STATS: ResultStat[] = [
 ];
 
 export const TOPPERS: TopperCard[] = [
-  { id: 't1',  name: 'Arjun Mehta',    exam: 'JEE Advanced', score: 'AIR 42',         college: 'IIT Bombay — CS',            year: '2026', batch: 'JEE 2-Year',          initials: 'AM', color: 'bg-[#0B3C5D]'  },
-  { id: 't2',  name: 'Priya Sharma',   exam: 'NEET UG',      score: '710 / 720',      college: 'AIIMS New Delhi',            year: '2026', batch: 'NEET 2-Year',         initials: 'PS', color: 'bg-[#27AE60]'  },
-  { id: 't3',  name: 'Riya Verma',     exam: 'CUET UG',      score: '98.2 %ile',      college: 'DU — BA Eco (Hons)',         year: '2026', batch: 'CUET Commerce',       initials: 'RV', color: 'bg-[#7C3AED]'  },
-  { id: 't4',  name: 'Karan Singh',    exam: 'JEE Main',     score: '99.4 %ile',      college: 'NIT Trichy — Mech',         year: '2026', batch: 'JEE 1-Year',          initials: 'KS', color: 'bg-[#0891B2]'  },
-  { id: 't5',  name: 'Ananya Gupta',   exam: 'NEET UG',      score: '695 / 720',      college: 'MAMC Delhi',                year: '2026', batch: 'NEET 1-Year Dropper', initials: 'AG', color: 'bg-[#DB2777]'  },
-  { id: 't6',  name: 'Rohan Kapoor',   exam: 'CBSE Class 12',score: '98.6%',          college: 'Sciences — PCM',            year: '2026', batch: 'Class 11–12 Science', initials: 'RK', color: 'bg-[#F39C12]'  },
-  { id: 't7',  name: 'Divya Nair',     exam: 'JEE Advanced', score: 'AIR 184',        college: 'IIT Delhi — Electrical',    year: '2026', batch: 'JEE 2-Year',          initials: 'DN', color: 'bg-[#0B3C5D]'  },
-  { id: 't8',  name: 'Sahil Malhotra', exam: 'CUET UG',      score: '97.8 %ile',      college: 'JNU — MA Economics',        year: '2026', batch: 'CUET Arts',           initials: 'SM', color: 'bg-[#7C3AED]'  },
+  { id: 't1',  name: 'Arjun Mehta',    exam: 'JEE Advanced', score: 'AIR 42',         college: 'IIT Bombay — CS',            year: '2026', batch: 'JEE 2-Year',           image:'https://images.pexels.com/photos/3985198/pexels-photo-3985198.jpeg ', color: 'bg-[#0B3C5D]'  },
+  { id: 't2',  name: 'Priya Sharma',   exam: 'NEET UG',      score: '710 / 720',      college: 'AIIMS New Delhi',            year: '2026', batch: 'NEET 2-Year',        image:'https://images.pexels.com/photos/5211457/pexels-photo-5211457.jpeg', color: 'bg-[#27AE60]'  },
+  { id: 't3',  name: 'Riya Verma',     exam: 'CUET UG',      score: '98.2 %ile',      college: 'DU — BA Eco (Hons)',         year: '2026', batch: 'CUET Commerce',       image:'https://images.pexels.com/photos/5211478/pexels-photo-5211478.jpeg', color: 'bg-[#7C3AED]'  },
+  { id: 't4',  name: 'Karan Singh',    exam: 'JEE Main',     score: '99.4 %ile',      college: 'NIT Trichy — Mech',         year: '2026', batch: 'JEE 1-Year',          image:'https://images.pexels.com/photos/32213218/pexels-photo-32213218.jpeg', color: 'bg-[#0891B2]'  },
+  { id: 't5',  name: 'Ananya Gupta',   exam: 'NEET UG',      score: '695 / 720',      college: 'MAMC Delhi',                year: '2026', batch: 'NEET 1-Year Dropper',  image:'https://images.pexels.com/photos/5211457/pexels-photo-5211457.jpeg', color: 'bg-[#DB2777]'  },
+  { id: 't6',  name: 'Rohan Kapoor',   exam: 'CBSE Class 12',score: '98.6%',          college: 'Sciences — PCM',            year: '2026', batch: 'Class 11–12 Science', image: 'https://images.pexels.com/photos/5211478/pexels-photo-5211478.jpeg' , color: 'bg-[#F39C12]'  },
+  { id: 't7',  name: 'Divya Nair',     exam: 'JEE Advanced', score: 'AIR 184',        college: 'IIT Delhi — Electrical',    year: '2026', batch: 'JEE 2-Year',         image:'https://images.pexels.com/photos/31367494/pexels-photo-31367494.jpeg' , color: 'bg-[#0B3C5D]'  },
+  { id: 't8',  name: 'Sahil Malhotra', exam: 'CUET UG',      score: '97.8 %ile',      college: 'JNU — MA Economics',        year: '2026', batch: 'CUET Arts',          image:'https://images.pexels.com/photos/3985198/pexels-photo-3985198.jpeg ', color: 'bg-[#7C3AED]'  },
 ];
 
 export const YEAR_RESULTS: YearResult[] = [

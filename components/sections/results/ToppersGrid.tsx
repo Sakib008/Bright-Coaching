@@ -9,6 +9,7 @@ import Container from '@/components/layout/Container';
 import { TOPPERS } from '@/lib/siteData';
 import { containerVariants, itemVariants, viewportLazy } from '@/lib/motion';
 import { GraduationCap, Star } from 'lucide-react';
+import Image from 'next/image';
 
 export default function ToppersGrid() {
   const [featured, ...rest] = TOPPERS;
@@ -32,7 +33,14 @@ export default function ToppersGrid() {
             className={['col-span-1 flex flex-col rounded-[28px] p-7 sm:col-span-2', featured.color].join(' ')}
             style={{ boxShadow: '0 12px 40px rgba(11,60,93,0.20)' }}>
             <div className="flex items-center justify-between">
-              <div className="flex h-14 w-14 items-center justify-center rounded-[16px] bg-white/15 text-2xl font-bold text-white">{featured.initials}</div>
+              <Image
+                src={featured.image}
+                alt={featured.name}
+                width={800}
+                height={800}
+                className="h-14 w-14 items-center justify-center rounded-[16px] bg-white/15 text-2xl font-bold text-white"
+                loading="lazy"
+              />
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1.5 text-xs font-bold text-white">
                 <Star size={11} aria-hidden="true" /> Featured Topper
               </span>
@@ -56,7 +64,14 @@ export default function ToppersGrid() {
               transition={{ duration: 0.28 }}
               className="flex flex-col rounded-[24px] border border-slate-200/70 bg-[#F8FAFC] p-6">
               <div className="flex items-start justify-between">
-                <div className={['flex h-11 w-11 items-center justify-center rounded-[12px] text-sm font-bold text-white', t.color].join(' ')}>{t.initials}</div>
+                <Image
+                  src={t.image}
+                  alt={t.name}
+                  width={800}
+                  height={800}
+                  className="h-11 w-11 items-center justify-center rounded-[12px] text-sm font-bold text-white"
+                  loading="lazy"
+                />
                 <span className="rounded-full bg-white px-2.5 py-1 text-[10px] font-semibold text-[#64748B] shadow-[0_1px_4px_rgba(0,0,0,0.06)]">{t.year}</span>
               </div>
               <h3 className="mt-4 font-heading text-base font-bold text-[#1E293B]">{t.name}</h3>
