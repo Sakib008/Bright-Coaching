@@ -68,8 +68,14 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
 
                 <div className="mt-auto flex items-center justify-between pt-5">
                   <div className="flex items-center gap-2">
-                    <div className="flex h-7 w-7 items-center justify-center rounded-full text-[0.6rem] font-bold text-white"
-                      style={{ background: post.accentColor }}>{post.initials}</div>
+                    <Image
+                      src={post.img}
+                      alt={post.author}
+                      width={24}
+                      height={24}
+                      className="h-6 w-6 shrink-0 rounded-full object-cover"
+                      loading="lazy"
+                    />
                     <div>
                       <p className="text-xs font-bold text-[#1E293B]">{post.author}</p>
                       <p className="text-[0.65rem] text-[#94A3B8]">{post.date}</p>

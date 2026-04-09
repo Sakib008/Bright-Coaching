@@ -6,7 +6,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { POSTS, BLOG_META } from '@/lib/blogData';
+import { POSTS } from '@/lib/blogData';
 import BlogHero             from '@/components/sections/blog/BlogHero';
 import FeaturedPost         from '@/components/sections/blog/FeaturedPost';
 import BlogGrid             from '@/components/sections/blog/BlogGrid';
