@@ -8,6 +8,7 @@
 import { motion } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 import { TESTIMONIALS } from '@/lib/aboutData';
+import Image from 'next/image';
 
 export default function TestimonialsCarousel() {
   const trackRef  = useRef<HTMLDivElement>(null);
@@ -78,11 +79,15 @@ export default function TestimonialsCarousel() {
               <p className="text-sm leading-7 text-[#1E293B]">"{t.text}"</p>
               {/* Attribution */}
               <footer className="mt-6 flex items-center gap-3">
-                <div
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
+                <Image
+                  src={t.img}
+                  alt={t.name}
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
+
                   style={{ background: t.color }}
-                  aria-hidden="true"
-                >{t.initials}</div>
+                  />
                 <div>
                   <p className="text-sm font-bold text-[#1E293B]">{t.name}</p>
                   <p className="text-xs text-[#94A3B8]">{t.role}</p>
