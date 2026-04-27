@@ -39,7 +39,7 @@ export default function Header() {
           ].join(' ')}
         >
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5" aria-label="Bright Minds home">
+          <Link href="/" className="flex items-center gap-2.5" aria-label="Brilliant Academy home">
             <div className="flex h-8 w-8 items-center justify-center rounded-[10px] bg-[#0B3C5D]">
               <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
                 <path d="M12 3L2 8l10 5 10-5-10-5Z" fill="white"/>
@@ -47,7 +47,7 @@ export default function Header() {
                 <path d="M2 12l10 5 10-5" stroke="white" strokeWidth="1.8" strokeLinecap="round" opacity=".55"/>
               </svg>
             </div>
-            <span className="font-heading text-lg font-bold text-[#0B3C5D]">Bright Minds</span>
+            <span className="font-heading text-lg font-bold text-[#0B3C5D]">Brilliant Academy</span>
           </Link>
 
           {/* Desktop Nav */}

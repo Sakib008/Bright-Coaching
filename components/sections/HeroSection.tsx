@@ -15,6 +15,11 @@ const STATS = [
 ];
 
 // Replace src values with your actual student/campus photos
+const LOCAL_IMAGES = [
+  { src: "/images/brig2.png", alt: "Students in classroom"  },
+  { src: "/images/brig.png", alt: "Student studying"       },
+  { src: "/images/bri2.webp", alt: "Books and learning"     },
+];
 const CAROUSEL_IMAGES = [
   { src: "https://images.pexels.com/photos/8617759/pexels-photo-8617759.jpeg", alt: "Students in classroom"  },
   { src: "https://images.pexels.com/photos/6683675/pexels-photo-6683675.jpeg", alt: "Student studying"       },
@@ -203,14 +208,13 @@ export default function HeroSection() {
               className="flex rounded-md gap-3 h-[440px] overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               style={{ cursor: "grab" }}
             >
-              {[...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES].map((img, i) => (
-                <div key={i} className="flex-none" style={{ width: 630 }}>
+              {[...LOCAL_IMAGES, ...LOCAL_IMAGES].map((img, i) => (
+                <div key={i} className="flex-none w-[630px] h-[440px] relative" style={{ width: 630 }}>
                   <Image
-                  height={600}
-                  width={800}
+                  fill
                     src={img.src}
                     alt={img.alt}
-                    className=" rounded-2xl object-cover"
+                    className=" rounded-2xl object-fill"
                     draggable={false}
                   />
                 </div>
